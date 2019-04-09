@@ -19,9 +19,11 @@ const BlogPostTemplate = ({ data }) => {
   );
 };
 
+export default BlogPostTemplate;
+
 export const PostDataQuery = graphql`
 query postDataQuery($path: String!) {
-  markdownRemark(frontmatter: slug: { eq: $path } }) {
+  markdownRemark(frontmatter: { slug: { eq: $path } }) {
     html
     frontmatter {
       title
