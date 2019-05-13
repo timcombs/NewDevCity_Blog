@@ -11,7 +11,7 @@ const ThirdPage = () => (
     <InputColors />
     <Link to='/'>Go back to homepage</Link>
   </Layout>
-)
+);
 
 class InputColors extends React.Component {
   constructor(props) {
