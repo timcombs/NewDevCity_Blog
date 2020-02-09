@@ -4,7 +4,6 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 
 const BlogPostTemplate = ({ data }) => {
-
   // extract the contents from data
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
@@ -12,9 +11,11 @@ const BlogPostTemplate = ({ data }) => {
   // return the component layout
   return (
     <Layout>
-      <h1>{ frontmatter.title }</h1>
-      <h3>{ frontmatter.author } | { frontmatter.date }</h3>
-      <div dangerouslySetInnerHTML={{ __html: html }}></div>
+      <h1>{frontmatter.title}</h1>
+      <h3>
+        {frontmatter.author} | {frontmatter.date}
+      </h3>
+      <div dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
   );
 };
@@ -22,14 +23,14 @@ const BlogPostTemplate = ({ data }) => {
 export default BlogPostTemplate;
 
 export const PostDataQuery = graphql`
-query postDataQuery($path: String!) {
-  markdownRemark(frontmatter: { slug: { eq: $path } }) {
-    html
-    frontmatter {
-      title
-      author
-      date
+  query postDataQuery($path: String!) {
+    markdownRemark(frontmatter: { slug: { eq: $path } }) {
+      html
+      frontmatter {
+        title
+        author
+        date
+      }
     }
   }
-}
 `;
