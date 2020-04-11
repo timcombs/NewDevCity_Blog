@@ -17,16 +17,13 @@ class InputColors extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      colors: []
+      colors: [],
     };
   }
 
   render() {
-    return (
-      <input placeholder='enter color list'></input>
-    );
+    return <input placeholder='enter color list'></input>;
   }
-
 }
 
-export default ThirdPage
+export default ThirdPage;
