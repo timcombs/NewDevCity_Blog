@@ -1,12 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: 'newDevCity',
+    title: `newDevCity`,
     description:
       'newDevCity blog articles about web development, inclusion, accessibility, security, collaboration, creattivity, code art, and coding tips & tricks.',
     author: 'Tim Combs',
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

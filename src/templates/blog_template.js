@@ -13,7 +13,7 @@ const BlogPostTemplate = ({ data }) => {
     <Layout>
       <h1>{frontmatter.title}</h1>
       <h3>
-        {frontmatter.author} | {frontmatter.date}
+        by {frontmatter.author} {/* |{frontmatter.date} */}
       </h3>
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
