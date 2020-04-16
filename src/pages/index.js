@@ -42,7 +42,10 @@ export default IndexPage;
 
 export const postsQuery = graphql`
   query postsQuery {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { published: { eq: true } } }
+    ) {
       edges {
         node {
           frontmatter {
