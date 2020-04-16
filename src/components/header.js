@@ -1,9 +1,9 @@
-import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
 import React from 'react';
+import { Link, StaticQuery, graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 // import Img from 'gatsby-image';
 
-const Header = ({ siteTitle }) => (
+const Header = ({ data }) => (
   <header
     style={{
       background: `rebeccapurple`,
@@ -25,19 +25,34 @@ const Header = ({ siteTitle }) => (
             textDecoration: `none`,
           }}
         >
-          {siteTitle}
+          {data.site.siteMetadata.title}
         </Link>
       </h1>
     </div>
   </header>
 );
 
+export default (props) => (
+  <StaticQuery
+    query={graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `}
+    render={(data) => <Header data={data} {...props} />}
+  />
+);
+
 Header.propTypes = {
-  siteTitle: PropTypes.string,
+  data: PropTypes.shape({
+    site: PropTypes.shape({
+      siteMetadata: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+      }).isRequired,
+    }).isRequired,
+  }).isRequired,
 };
-
-Header.defaultProps = {
-  siteTitle: ``,
-};
-
-export default Header;
