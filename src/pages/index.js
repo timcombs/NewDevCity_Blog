@@ -17,7 +17,7 @@ function getPosts(data) {
     let postData = element.node.frontmatter;
 
     posts.push(
-      <Link to={postData.slug}>
+      <Link to={postData.slug} key={element.node.id}>
         <h1>{postData.title}</h1>
       </Link>
     );
@@ -48,6 +48,7 @@ export const postsQuery = graphql`
     ) {
       edges {
         node {
+          id
           frontmatter {
             slug
             title
