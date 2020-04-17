@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link, StaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-// import Img from 'gatsby-image';
 
 const Header = ({ data }) => (
   <header
     style={{
-      background: `rebeccapurple`,
+      background: `black`,
       marginBottom: `1.45rem`,
     }}
   >

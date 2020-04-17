@@ -10,6 +10,7 @@ import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
 import Header from './header';
+import HeaderImg from './header-image';
 import './layout.css';
 
 const Layout = ({ children }) => (
@@ -25,6 +26,7 @@ const Layout = ({ children }) => (
     `}
     render={(data) => (
       <>
+        <HeaderImg />
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
           style={{

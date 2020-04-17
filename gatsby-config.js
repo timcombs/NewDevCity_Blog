@@ -1,9 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `newDevCity`,
-    description:
-      'newDevCity blog articles about web development, inclusion, accessibility, security, collaboration, creattivity, code art, and coding tips & tricks.',
-    author: 'Tim Combs',
+    description: `newDevCity blog articles about web development, inclusion, accessibility, security, collaboration, creattivity, code art, and coding tips & tricks.`,
+    author: `Tim Combs`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -30,6 +29,11 @@ module.exports = {
     },
 
     {
+      resolve: `gatsby-source-filesystem`,
+      options: { path: `./src/images` },
+    },
+
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'posts',
@@ -38,15 +42,16 @@ module.exports = {
     },
 
     {
-      resolve: 'gatsby-transformer-remark',
+      resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
           {
-            resolve: 'gatsby-remark-images',
+            resolve: `gatsby-source-filesystem`,
             options: {
-              maxWidth: 800,
+              path: `${__dirname}/src/images`,
             },
           },
+
           {
             resolve: 'gatsby-remark-prismjs',
             options: {
