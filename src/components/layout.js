@@ -13,6 +13,8 @@ import Header from './header';
 import HeaderImg from './header-image';
 import './layout.css';
 
+import 'typeface-lekton';
+
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
@@ -25,7 +27,14 @@ const Layout = ({ children }) => (
       }
     `}
     render={(data) => (
-      <>
+      <div
+        style={{
+          background: `linear-gradient(#ffcf4a, 85%, #ff00ff)`,
+          fontFamily: `lekton, sans-serif`,
+          fontWeight: `normal`,
+          fontSize: `1.5rem`,
+        }}
+      >
         <HeaderImg />
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
@@ -37,7 +46,12 @@ const Layout = ({ children }) => (
           }}
         >
           <main>{children}</main>
-          <footer>
+          <footer
+            style={{
+              fontSize: `1rem`,
+              paddingTop: `1rem`,
+            }}
+          >
             © {new Date().getFullYear()}, Built with
             {` `}
             <a href='https://www.gatsbyjs.org'>Gatsby</a>
@@ -45,7 +59,7 @@ const Layout = ({ children }) => (
             <a href='https://www.timcombs.github.io'>Tim Combs</a>
           </footer>
         </div>
-      </>
+      </div>
     )}
   />
 );

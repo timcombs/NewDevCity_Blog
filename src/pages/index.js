@@ -16,7 +16,18 @@ function getPosts(data) {
     let postData = element.node.frontmatter;
 
     posts.push(
-      <Link to={postData.slug} key={element.node.id}>
+      <Link
+        to={postData.slug}
+        key={element.node.id}
+        style={{
+          fontSize: `3vw`,
+          color: `#005400`,
+          fontFamily: `lekton, Verdana, sans-serif`,
+          fontWeight: `normal`,
+          fontStyle: `normal`,
+          textDecoration: `#009f00 double underline`,
+        }}
+      >
         <h1>{postData.title}</h1>
       </Link>
     );

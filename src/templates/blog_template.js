@@ -4,6 +4,8 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import Layout from '../components/layout';
 
+import 'typeface-lekton';
+
 const BlogPostTemplate = ({ data }) => {
   // extract the contents from data
   const { markdownRemark } = data;
@@ -13,12 +15,24 @@ const BlogPostTemplate = ({ data }) => {
   // return the component layout
   return (
     <Layout>
-      <Img fluid={postImgFluid} />
-      <h1>{frontmatter.title}</h1>
-      <h3>
+      <h1
+        style={{
+          textAlign: `center`,
+          fontSize: `3rem`,
+        }}
+      >
+        {frontmatter.title}
+      </h1>
+      <h3
+        style={{
+          fontSize: `1rem`,
+          paddingBottom: `1rem`,
+        }}
+      >
         by {frontmatter.author} {/* |{frontmatter.date} */}
       </h3>
       <div dangerouslySetInnerHTML={{ __html: html }} />
+      <Img fluid={postImgFluid} />
     </Layout>
   );
 };
