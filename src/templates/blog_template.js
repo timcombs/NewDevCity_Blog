@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import Img from 'gatsby-image';
+// import Img from 'gatsby-image';
 import Layout from '../components/layout';
 
 import 'typeface-lekton';
@@ -10,7 +10,6 @@ const BlogPostTemplate = ({ data }) => {
   // extract the contents from data
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
-  let postImgFluid = frontmatter.postImg.childImageSharp.fluid;
 
   // return the component layout
   return (
@@ -32,7 +31,6 @@ const BlogPostTemplate = ({ data }) => {
         by {frontmatter.author} {/* |{frontmatter.date} */}
       </h3>
       <div dangerouslySetInnerHTML={{ __html: html }} />
-      <Img fluid={postImgFluid} />
     </Layout>
   );
 };
@@ -47,13 +45,6 @@ export const PostDataQuery = graphql`
         title
         author
         date
-        postImg {
-          childImageSharp {
-            fluid(maxWidth: 1000) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
       }
     }
   }

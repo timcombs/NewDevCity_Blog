@@ -23,7 +23,7 @@ const Header = ({ data }) => (
         <Link
           to='/'
           style={{
-            fontSize: `3vw`,
+            fontSize: `2.75vw`,
             color: `white`,
             fontFamily: `lekton, Verdana, sans-serif`,
             fontWeight: `normal`,
