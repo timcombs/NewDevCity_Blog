@@ -14,7 +14,6 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -34,20 +33,21 @@ module.exports = {
         path: `${__dirname}/src/posts`,
       },
     },
-    `gatsby-remark-images`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/images`,
+      },
+    },
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
           {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-              path: `${__dirname}/src/images`,
-            },
-          },
-          {
             resolve: `gatsby-remark-images`,
             options: {
+              maxWidth: 1200,
               linkImagesToOriginal: true,
               loading: `lazy`,
             },
@@ -60,6 +60,9 @@ module.exports = {
               aliases: {},
               showLineNumbers: false,
               noInlineHighlight: false,
+              prompt: {
+                global: true,
+              },
             },
           },
         ],
