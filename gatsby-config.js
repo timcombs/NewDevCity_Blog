@@ -27,15 +27,16 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'posts',
+        name: `posts`,
         path: `${__dirname}/src/posts`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `images`,
         path: `${__dirname}/src/images`,
       },
     },
@@ -61,7 +62,9 @@ module.exports = {
               showLineNumbers: false,
               noInlineHighlight: false,
               prompt: {
-                global: true,
+                user: `root`,
+                host: `localhost`,
+                global: false,
               },
             },
           },
