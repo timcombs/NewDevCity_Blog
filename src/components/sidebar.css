@@ -1,0 +1,9 @@
+a {
+  text-decoration: none;
+}
+
+.graditext {
+  background: -webkit-linear-gradient(#ffcf4a, #ff00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

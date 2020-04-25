@@ -11,6 +11,7 @@ import { StaticQuery, graphql } from 'gatsby';
 
 import Header from './header';
 import HeaderImg from './header-image';
+import Sidebar from './sidebar';
 import './layout.css';
 
 import 'typeface-lekton';
@@ -27,39 +28,49 @@ const Layout = ({ children }) => (
       }
     `}
     render={(data) => (
-      <div
-        style={{
-          background: `linear-gradient(#ffcf4a, 85%, #ff00ff)`,
-          fontFamily: `lekton, sans-serif`,
-          fontWeight: `normal`,
-          fontSize: `1.5rem`,
-        }}
-      >
+      <>
         <HeaderImg />
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
           style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-            padding: `0px 1.0875rem 1.45rem`,
-            paddingTop: 0,
+            display: `flex`,
           }}
         >
-          <main>{children}</main>
-          <footer
+          <Sidebar />
+          <div
             style={{
-              fontSize: `1rem`,
-              paddingTop: `1rem`,
+              background: `linear-gradient(#ffcf4a, 85%, #ff00ff)`,
+              fontFamily: `lekton, sans-serif`,
+              fontWeight: `normal`,
+              fontSize: `1.5rem`,
+              width: `73%`,
             }}
           >
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href='https://www.gatsbyjs.org'>Gatsby</a>
-            {` `}by{` `}
-            <a href='https://www.timcombs.github.io'>Tim Combs</a>
-          </footer>
+            <div
+              style={{
+                margin: `0 auto`,
+                maxWidth: 960,
+                padding: `0px 1.0875rem 1.45rem`,
+                paddingTop: 0,
+              }}
+            >
+              <main>{children}</main>
+              <footer
+                style={{
+                  fontSize: `1rem`,
+                  paddingTop: `1rem`,
+                }}
+              >
+                © {new Date().getFullYear()}, Built with
+                {` `}
+                <a href='https://www.gatsbyjs.org'>Gatsby</a>
+                {` `}by{` `}
+                <a href='https://www.timcombs.github.io'>Tim Combs</a>
+              </footer>
+            </div>
+          </div>
         </div>
-      </div>
+      </>
     )}
   />
 );

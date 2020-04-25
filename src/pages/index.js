@@ -41,7 +41,13 @@ function getPosts(data) {
     the GraphQL query below it.
 */
 
-const IndexPage = ({ data }) => <Layout>{getPosts(data)}</Layout>;
+const IndexPage = ({ data }) => {
+  return (
+    <>
+      <Layout>{getPosts(data)}</Layout>
+    </>
+  );
+};
 
 export default IndexPage;
 
