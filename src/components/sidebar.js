@@ -6,7 +6,7 @@ import './sidebar.css';
 
 import 'typeface-molengo';
 
-// TODO: make sidebar 38% of total width
+// TODO: make sidebar 27% of total width
 // TODO: make font size 10% bigger than body text
 // TODO: what color is sidebar
 // TODO: put nav at top of sidebar
@@ -49,7 +49,6 @@ const Sidebar = ({ data }) => (
         Tags
       </Link>
     </h2>
-    <br />
     <br />
     <h2>
       <Link>latest Tip N Trick</Link>
