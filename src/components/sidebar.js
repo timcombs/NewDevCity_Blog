@@ -6,7 +6,7 @@ import './sidebar.css';
 
 import 'typeface-molengo';
 
-// TODO: make sidebar 27% of total width
+// TODO: make sidebar 21% of total width
 // TODO: make font size 10% bigger than body text
 // TODO: what color is sidebar
 // TODO: put nav at top of sidebar
@@ -22,40 +22,40 @@ const Sidebar = ({ data }) => (
     style={{
       background: `black`,
       fontFamily: `molengo, Verdana, sans-serif`,
-      fontSize: `1.75rem`,
       fontWeight: `bold`,
       padding: `1rem`,
-      width: `27%`,
+      width: `21%`,
       textAlign: `center`,
     }}
   >
-    <h2>
+    <h3>
       <Link to='/' activeClassName='graditext'>
         Home
       </Link>
-    </h2>
-    <h2>
+    </h3>
+    <h3>
       <Link to='/about' activeClassName='graditext'>
         About
       </Link>
-    </h2>
-    <h2>
+    </h3>
+    <h3>
       <Link to='/contact' activeClassName='graditext'>
         Contact
       </Link>
-    </h2>
-    <h2>
+    </h3>
+    <h3>
       <Link to='/tags' activeClassName='graditext'>
         Tags
       </Link>
-    </h2>
+    </h3>
     <br />
-    <h2>
-      <Link>latest Tip N Trick</Link>
-    </h2>
-    <h2>
-      <Link>TIP N TRICK</Link>
-    </h2>
+    <br />
+    <h3>
+      <Link to='/tips'>latest Tip N Trick</Link>
+    </h3>
+    <h3>
+      <Link to='/atrick'>TIP N TRICK</Link>
+    </h3>
   </aside>
 );
 

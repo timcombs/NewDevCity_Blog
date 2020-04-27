@@ -43,7 +43,7 @@ const Layout = ({ children }) => (
               fontFamily: `lekton, sans-serif`,
               fontWeight: `normal`,
               fontSize: `1.5rem`,
-              width: `73%`,
+              width: `79%`,
             }}
           >
             <div

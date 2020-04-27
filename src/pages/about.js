@@ -10,7 +10,7 @@ const About = () => (
     <h1>About</h1>
     <p>About</p>
     <Link className='styled-a' to='/'>
-      Go back to the homepage
+      Return to the homepage
     </Link>
   </Layout>
 );
