@@ -32,7 +32,7 @@ const Layout = ({ children }) => (
           background: `linear-gradient(#ffcf4a, 85%, #ff00ff)`,
           fontFamily: `lekton, sans-serif`,
           fontWeight: `normal`,
-          fontSize: `1.5rem`,
+          fontSize: `1.2rem`,
         }}
       >
         <HeaderImg />
@@ -43,6 +43,7 @@ const Layout = ({ children }) => (
             maxWidth: 960,
             padding: `0px 1.0875rem 1.45rem`,
             paddingTop: 0,
+            lineHeight: `95%`,
           }}
         >
           <main>{children}</main>
