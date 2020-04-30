@@ -28,7 +28,14 @@ const Layout = ({ children }) => (
       }
     `}
     render={(data) => (
-      <>
+      <div
+        style={{
+          background: `linear-gradient(#ffcf4a, 85%, #ff00ff)`,
+          fontFamily: `lekton, sans-serif`,
+          fontWeight: `normal`,
+          fontSize: `1.2rem`,
+        }}
+      >
         <HeaderImg />
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
@@ -74,7 +81,7 @@ const Layout = ({ children }) => (
             </div>
           </div>
         </div>
-      </>
+      </div>
     )}
   />
 );

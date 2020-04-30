@@ -4,6 +4,8 @@ import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
 // import SEO from '../components/seo';
 
+import '../page_styles/index.css';
+
 /*  ***************** This is the function to extract the data *****************
  ***** Function to create a list of <h1> elements with Post title ***********
  ***** @param {*} data
@@ -20,7 +22,6 @@ function getPosts(data) {
         to={postData.slug}
         key={element.node.id}
         style={{
-          fontSize: `3vw`,
           color: `#005400`,
           fontFamily: `lekton, Verdana, sans-serif`,
           fontWeight: `normal`,

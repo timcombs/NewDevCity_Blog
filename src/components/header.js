@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, StaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
+import './header.css';
 import 'typeface-lekton';
 
 const Header = ({ data }) => (
@@ -22,7 +23,6 @@ const Header = ({ data }) => (
         <Link
           to='/'
           style={{
-            fontSize: `2.75vw`,
             color: `white`,
             fontFamily: `lekton, Verdana, sans-serif`,
             fontWeight: `normal`,
@@ -30,12 +30,14 @@ const Header = ({ data }) => (
             textDecoration: `none`,
           }}
         >
-          <p>
-            the future of the web is collaborative and creative,
-            <br />
-            therefore it must be secure, inclusive, and accessible.
-          </p>
-          <p>the future is now.</p>
+          <section>
+            <p>
+              the future of the web is collaborative and creative,
+              <br />
+              therefore it must be secure, inclusive, and accessible.
+            </p>
+            <p>the future is now.</p>
+          </section>
         </Link>
       </h1>
     </div>
