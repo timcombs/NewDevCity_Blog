@@ -70,3 +70,6 @@ yarn-error.log
 
 # Pix not needed on website
 newdevcity_pix
+
+#vsCode settings
+.vscode
