@@ -29,7 +29,7 @@ const Layout = ({ children }) => (
     render={(data) => (
       <div
         style={{
-          background: `linear-gradient(#ffcf4a, 85%, #ff00ff)`,
+          background: `linear-gradient(#ffcf4a, 90%, #ff00ff)`,
           fontFamily: `lekton, sans-serif`,
           fontWeight: `normal`,
           fontSize: `1.2rem`,
@@ -43,7 +43,6 @@ const Layout = ({ children }) => (
             maxWidth: 960,
             padding: `0px 1.0875rem 1.45rem`,
             paddingTop: 0,
-            lineHeight: `95%`,
           }}
         >
           <main>{children}</main>

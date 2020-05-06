@@ -395,7 +395,6 @@ ul {
   margin-bottom: 1.45rem;
   list-style-position: outside;
   list-style-image: none;
-  line-height: 60%;
 }
 
 ol {
@@ -581,7 +580,7 @@ th {
 }
 
 li {
-  margin-bottom: calc(1.45rem / 2);
+  margin-bottom: calc(0.4rem / 2);
 }
 
 ol li {
@@ -708,6 +707,13 @@ pre code:after,
 pre tt:before,
 pre tt:after {
   content: '';
+}
+
+figcaption {
+  font-size: 0.8rem;
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
 }
 
 @media only screen and (max-width: 480px) {

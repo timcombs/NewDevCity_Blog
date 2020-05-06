@@ -51,6 +51,7 @@ module.exports = {
               maxWidth: 600,
               linkImagesToOriginal: true,
               loading: `lazy`,
+              showCaptions: `true`,
             },
           },
           {
