@@ -9,7 +9,6 @@ const Header = ({ data }) => (
   <header
     style={{
       background: `black`,
-      marginBottom: `1.45rem`,
       textAlign: `center`,
     }}
   >

@@ -14,6 +14,7 @@ export default () => {
       }
     }
   `);
+  
   return (
     <Img
       fluid={data.file.childImageSharp.fluid}
