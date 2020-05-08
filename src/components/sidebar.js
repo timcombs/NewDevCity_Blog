@@ -43,7 +43,7 @@ const Sidebar = ({ data }) => (
         Contact
       </Link>
     </h3>
-    <h3>
+    {/* <h3>
       <Link to='/tags' activeClassName='graditext'>
         Tags
       </Link>
@@ -55,7 +55,7 @@ const Sidebar = ({ data }) => (
     </h3>
     <h3>
       <Link to='/atrick'>TIP N TRICK</Link>
-    </h3>
+    </h3> */}
   </aside>
 );
 
