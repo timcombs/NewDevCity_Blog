@@ -43,12 +43,13 @@ const Layout = ({ children }) => (
             margin: `0 auto`,
             paddingTop: 0,
             display: `flex`,
+            minHeight: `500px`,
           }}
         >
           <Sidebar />
           <div
             style={{
-              background: `linear-gradient(#ffcf4a, 85%, #ff00ff)`,
+              background: `linear-gradient(#ffcf4a, 75%, #ff00ff)`,
               padding: `0px 1.0875rem 1.45rem`,
               fontFamily: `lekton, sans-serif`,
               fontWeight: `normal`,
