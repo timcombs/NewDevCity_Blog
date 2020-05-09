@@ -6,16 +6,7 @@ import './sidebar.css';
 import 'typeface-molengo';
 
 const Sidebar = ({ data }) => (
-  <aside
-    style={{
-      background: `black`,
-      fontFamily: `molengo, Verdana, sans-serif`,
-      fontWeight: `bold`,
-      padding: `1rem`,
-      width: `21%`,
-      textAlign: `center`,
-    }}
-  >
+  <aside style={{ fontFamily: `molengo, Verdana, sans-serif` }}>
     <h3>
       <Link to='/' activeClassName='graditext'>
         Home

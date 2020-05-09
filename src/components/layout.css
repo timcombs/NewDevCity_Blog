@@ -716,8 +716,32 @@ figcaption {
   font-weight: bold;
 }
 
-@media only screen and (max-width: 480px) {
+.main {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  padding-top: 0;
+  min-height: 500px;
+}
+
+.page-structure {
+  background: linear-gradient(#ffcf4a, 75%, #ff00ff);
+  padding: 0px 1.0875rem 1.45rem;
+  font-weight: normal;
+  font-size: 1.5rem;
+  width: 79%;
+}
+
+@media only screen and (max-width: 600px) {
   html {
     font-size: 80%;
+  }
+
+  .main {
+    flex-direction: column;
+  }
+
+  .page-structure {
+    width: 100%;
   }
 }

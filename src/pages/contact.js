@@ -12,7 +12,9 @@ const Contact = () => (
     <SEO title='Contact' />
     <h1>Contact Information</h1>
     <p>
-      The easiest way to get in touch with me is to DM or tweet at me on Twitter @deSolidState. Otherwise, if you want more information about me check out the links below.
+      The easiest way to get in touch with me is to DM or tweet at me on Twitter
+      @deSolidState. Otherwise, if you want more information about me check out
+      the links below.
     </p>
 
     <a className='icons' href='https://github.com/timcombs'>

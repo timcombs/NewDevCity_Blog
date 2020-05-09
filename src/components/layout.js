@@ -38,24 +38,11 @@ const Layout = ({ children }) => (
       >
         <HeaderImg />
         <Header siteTitle={data.site.siteMetadata.title} />
-        <div
-          style={{
-            margin: `0 auto`,
-            paddingTop: 0,
-            display: `flex`,
-            minHeight: `500px`,
-          }}
-        >
+        <main className='main'>
           <Sidebar />
-          <div
-            style={{
-              background: `linear-gradient(#ffcf4a, 75%, #ff00ff)`,
-              padding: `0px 1.0875rem 1.45rem`,
-              fontFamily: `lekton, sans-serif`,
-              fontWeight: `normal`,
-              fontSize: `1.5rem`,
-              width: `79%`,
-            }}
+          <section
+            className='post-structure'
+            style={{ fontFamily: `lekton, sans-serif` }}
           >
             <div
               style={{
@@ -65,7 +52,7 @@ const Layout = ({ children }) => (
                 paddingTop: 0,
               }}
             >
-              <main>{children}</main>
+              <article>{children}</article>
               <footer
                 style={{
                   fontSize: `1rem`,
@@ -83,8 +70,8 @@ const Layout = ({ children }) => (
                 </a>
               </footer>
             </div>
-          </div>
-        </div>
+          </section>
+        </main>
       </div>
     )}
   />
