@@ -32,6 +32,9 @@ const Contact = () => (
     <a className='icons' href='https://github.com/desolidstate'>
       <FontAwesomeIcon icon={['fab', 'github-square']} />
     </a>
+
+    {/* <a href='https://timcombs.github.io/'>Portfolio
+    </a> */}
   </Layout>
 );
 
