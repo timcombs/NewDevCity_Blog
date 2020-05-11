@@ -30,10 +30,13 @@ function getPosts(data) {
         }}
       >
         <h1>{postData.title}</h1>
-        <div>{element.node.excerpt}</div>
+        <div style={{ fontSize: `1.25rem` }}>{element.node.excerpt}</div>
         <p
           className='continue'
-          style={{ textDecoration: `#009f00 double underline` }}
+          style={{
+            textDecoration: `#009f00 double underline`,
+            fontSize: `1.25rem`,
+          }}
         >
           continue
         </p>
