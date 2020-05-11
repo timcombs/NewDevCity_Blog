@@ -18,19 +18,31 @@ const Contact = () => (
     </p>
 
     <a className='icons' href='https://github.com/timcombs'>
-      <FontAwesomeIcon icon={['fab', 'github-square']} />
+      <FontAwesomeIcon
+        icon={['fab', 'github-square']}
+        title='github account for tim combs'
+      />
     </a>
 
     <a className='icons' href='https://twitter.com/deSolidState'>
-      <FontAwesomeIcon icon={['fab', 'twitter-square']} />
+      <FontAwesomeIcon
+        icon={['fab', 'twitter-square']}
+        title='twitter account for deSolidState'
+      />
     </a>
 
     <a className='icons' href='https://www.linkedin.com/in/timothycombs/'>
-      <FontAwesomeIcon icon={['fab', 'linkedin']} />
+      <FontAwesomeIcon
+        icon={['fab', 'linkedin']}
+        title='linkedin account for tim combs'
+      />
     </a>
 
     <a className='icons' href='https://github.com/desolidstate'>
-      <FontAwesomeIcon icon={['fab', 'github-square']} />
+      <FontAwesomeIcon
+        icon={['fab', 'github-square']}
+        title='github account for deSolidState'
+      />
     </a>
 
     {/* <a href='https://timcombs.github.io/'>Portfolio

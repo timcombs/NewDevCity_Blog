@@ -6,5 +6,5 @@
 
 // You can delete this file if you're not using it
 
-require('prismjs/themes/prism-tomorrow.css');
+import './prism-tomorrow-edit.css';
 //require('prismjs/plugins/command-line/prism-command-line.css');

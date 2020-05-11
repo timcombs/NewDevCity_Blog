@@ -26,10 +26,17 @@ function getPosts(data) {
           fontFamily: `lekton, Verdana, sans-serif`,
           fontWeight: `normal`,
           fontStyle: `normal`,
-          textDecoration: `#009f00 double underline`,
+          textDecoration: `none`,
         }}
       >
         <h1>{postData.title}</h1>
+        <div>{element.node.excerpt}</div>
+        <p
+          className='continue'
+          style={{ textDecoration: `#009f00 double underline` }}
+        >
+          continue
+        </p>
       </Link>
     );
   });
@@ -66,6 +73,7 @@ export const postsQuery = graphql`
       edges {
         node {
           id
+          excerpt(pruneLength: 250)
           frontmatter {
             slug
             title

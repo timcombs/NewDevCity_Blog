@@ -273,7 +273,7 @@ h1 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 1rem;
   color: inherit;
   /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
   Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
@@ -730,10 +730,6 @@ figcaption {
   font-weight: normal;
   font-size: 1.5rem;
   width: 79%;
-}
-
-:not(pre) > code[class*='language-'] {
-  white-space: pre;
 }
 
 @media only screen and (max-width: 600px) {
