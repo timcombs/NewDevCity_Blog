@@ -31,10 +31,7 @@ const Sidebar = ({ data }) => (
     <br />
     <h3>
       <Link to='/tips'>latest Tip N Trick</Link>
-    </h3>
-    <h3>
-      <Link to='/atrick'>TIP N TRICK</Link>
-    </h3> */}
+    </h3>*/}
   </aside>
 );
 
