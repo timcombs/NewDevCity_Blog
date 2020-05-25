@@ -6,14 +6,16 @@
 
 // You can delete this file if you're not using it
 const path = require('path');
+const _ = require('lodash');
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
   const blogPostTemplate = path.resolve('src/templates/blog-template.js');
+  const tagTemplate = path.resolve('src/templates/tag-template.js');
 
   return graphql(`
     {
-      allMarkdownRemark(
+      postsRemark: allMarkdownRemark(
         limit: 100
         sort: { order: ASC, fields: [frontmatter___date] }
       ) {
@@ -25,15 +27,29 @@ exports.createPages = ({ actions, graphql }) => {
           }
         }
       }
+      tagsGroup: allMarkdownRemark(limit: 2000) {
+        group(field: frontmatter___tags) {
+          fieldValue
+        }
+      }
     }
   `).then((result) => {
     if (result.errors) {
       return Promise.reject(result.errors);
     }
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    result.data.postsRemark.edges.forEach(({ node }) => {
       createPage({
         path: node.frontmatter.slug,
         component: blogPostTemplate,
+      });
+    });
+    result.data.tagsGroup.group.forEach((tag) => {
+      createPage({
+        path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+        component: tagTemplate,
+        context: {
+          tag: tag.fieldValue,
+        },
       });
     });
   });
