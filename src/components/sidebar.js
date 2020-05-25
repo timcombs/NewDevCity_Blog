@@ -22,12 +22,12 @@ const Sidebar = ({ data }) => (
         Contact
       </Link>
     </h3>
-    {/* <h3>
+    <h3>
       <Link to='/tags' activeClassName='graditext'>
-        Tags
+        All Tags
       </Link>
     </h3>
-    <br />
+    {/* <br />
     <br />
     <h3>
       <Link to='/tips'>latest Tip N Trick</Link>

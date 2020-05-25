@@ -2,35 +2,66 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Link, graphql } from 'gatsby';
+import Layout from '../components/layout';
 
-const Tags = ({ pageContext, data }) => {
+const TagPageTemplate = ({ pageContext, data }) => {
   const { tag } = pageContext;
   const { edges, totalCount } = data.allMarkdownRemark;
-  const tagHeader = `$(totalCount) post${
+  const tagHeader = `${totalCount} post${
     totalCount === 1 ? '' : 's'
-  } tagged with '${tag}'`;
+  } tagged with `;
 
   return (
-    <div>
-      <h1>{tagHeader}</h1>
+    <Layout>
+      <h1
+        style={{
+          color: `#005400`,
+          fontFamily: `lekton, Verdana, sans-serif`,
+          fontWeight: `normal`,
+          fontStyle: `normal`,
+        }}
+      >
+        {tagHeader}
+        <strong>{tag}</strong>
+      </h1>
       <ul>
         {edges.map(({ node }) => {
           const { slug } = node.frontmatter;
           const { title } = node.frontmatter;
+          const { excerpt } = node;
 
           return (
-            <li key={slug}>
-              <Link to={slug}>{title}</Link>
-            </li>
+            <Link
+              to={slug}
+              key={node.id}
+              style={{
+                color: `#005400`,
+                fontFamily: `lekton, Verdana, sans-serif`,
+                fontWeight: `normal`,
+                fontStyle: `normal`,
+                textDecoration: `none`,
+              }}
+            >
+              <h1>{title}</h1>
+              <div style={{ fontSize: `1.25rem` }}>{excerpt}</div>
+              <p
+                className='continue'
+                style={{
+                  textDecoration: `#009f00 double underline`,
+                  fontSize: `1.25rem`,
+                }}
+              >
+                continue
+              </p>
+            </Link>
           );
         })}
       </ul>
-      {/* {<Link to="/tags">ALL TAGS</Link>} */}
-    </div>
+    </Layout>
   );
 };
 
-Tags.propTypes = {
+TagPageTemplate.propTypes = {
   pageContext: PropTypes.shape({
     tag: PropTypes.string.isRequired,
   }),
@@ -51,7 +82,7 @@ Tags.propTypes = {
   }),
 };
 
-export default Tags;
+export default TagPageTemplate;
 
 export const pageQuery = graphql`
   query($tag: String) {
@@ -62,6 +93,8 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
+          id
+          excerpt(pruneLength: 250)
           frontmatter {
             slug
             title
