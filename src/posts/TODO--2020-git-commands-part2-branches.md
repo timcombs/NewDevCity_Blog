@@ -3,6 +3,7 @@ slug: /git-commands-part2-branches
 date: 2019-05-07
 author: Tim Combs
 title:  Git Branches - Git Commands - Part 2
+tags: ["git", "version control", "command line"]
 published: false
 ---
 
