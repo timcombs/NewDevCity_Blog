@@ -24,39 +24,37 @@ const TagPageTemplate = ({ pageContext, data }) => {
         {tagHeader}
         <strong>{tag}</strong>
       </h1>
-      <ul>
-        {edges.map(({ node }) => {
-          const { slug } = node.frontmatter;
-          const { title } = node.frontmatter;
-          const { excerpt } = node;
+      {edges.map(({ node }) => {
+        const { slug } = node.frontmatter;
+        const { title } = node.frontmatter;
+        const { excerpt } = node;
 
-          return (
-            <Link
-              to={slug}
-              key={node.id}
+        return (
+          <Link
+            to={slug}
+            key={node.id}
+            style={{
+              color: `#005400`,
+              fontFamily: `lekton, Verdana, sans-serif`,
+              fontWeight: `normal`,
+              fontStyle: `normal`,
+              textDecoration: `none`,
+            }}
+          >
+            <h1>{title}</h1>
+            <div style={{ fontSize: `1.25rem` }}>{excerpt}</div>
+            <p
+              className='continue'
               style={{
-                color: `#005400`,
-                fontFamily: `lekton, Verdana, sans-serif`,
-                fontWeight: `normal`,
-                fontStyle: `normal`,
-                textDecoration: `none`,
+                textDecoration: `#009f00 double underline`,
+                fontSize: `1.25rem`,
               }}
             >
-              <h1>{title}</h1>
-              <div style={{ fontSize: `1.25rem` }}>{excerpt}</div>
-              <p
-                className='continue'
-                style={{
-                  textDecoration: `#009f00 double underline`,
-                  fontSize: `1.25rem`,
-                }}
-              >
-                continue
-              </p>
-            </Link>
-          );
-        })}
-      </ul>
+              continue
+            </p>
+          </Link>
+        );
+      })}
     </Layout>
   );
 };

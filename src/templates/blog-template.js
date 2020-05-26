@@ -1,5 +1,6 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
+import kebabCase from 'lodash/kebabCase';
 
 // import Img from 'gatsby-image';
 import Layout from '../components/layout';
@@ -25,11 +26,31 @@ const BlogPostTemplate = ({ data }) => {
       <h3
         style={{
           fontSize: `1rem`,
-          paddingBottom: `1rem`,
         }}
       >
-        by {frontmatter.author} {/* |{frontmatter.date} */}
+        by {frontmatter.author} | {frontmatter.date}
       </h3>
+      <p
+        style={{
+          fontWeight: `bold`,
+          fontSize: `1.35rem`,
+          marginBottom: `2rem`,
+        }}
+      >
+        Tags:{' '}
+        {frontmatter.tags.map((tag) => {
+          console.log(frontmatter.tags);
+          return (
+            <Link
+              key={tag}
+              to={`/tags/${kebabCase(tag)}/`}
+              style={{ textDecoration: `none` }}
+            >
+              <span> {tag} </span>
+            </Link>
+          );
+        })}
+      </p>
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
   );
@@ -44,7 +65,8 @@ export const PostDataQuery = graphql`
       frontmatter {
         title
         author
-        date
+        tags
+        date(formatString: "MMM D, YYYY")
       }
     }
   }

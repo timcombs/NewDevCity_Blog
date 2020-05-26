@@ -21,26 +21,24 @@ const TagsPage = ({
     <Layout>
       <div>
         <h1>Tags</h1>
-        <ul>
-          {group.map((tag) => (
-            <Link
-              key={tag.fieldValue}
-              to={`/tags/${kebabCase(tag.fieldValue)}/`}
-              style={{
-                color: `#005400`,
-                fontFamily: `lekton, Verdana, sans-serif`,
-                fontWeight: `bold`,
-                fontSize: `1.15em`,
-                textDecoration: `none`,
-                lineHeight: `1.25em`,
-              }}
-            >
-              {tag.fieldValue} ({tag.totalCount}
-              <span> </span> post
-              {tag.totalCount === 1 ? '' : 's'})<br />
-            </Link>
-          ))}
-        </ul>
+        {group.map((tag) => (
+          <Link
+            key={tag.fieldValue}
+            to={`/tags/${kebabCase(tag.fieldValue)}/`}
+            style={{
+              color: `#005400`,
+              fontFamily: `lekton, Verdana, sans-serif`,
+              fontWeight: `bold`,
+              fontSize: `1.15em`,
+              textDecoration: `none`,
+              lineHeight: `1.25em`,
+            }}
+          >
+            {tag.fieldValue} ({tag.totalCount}
+            <span> </span> post
+            {tag.totalCount === 1 ? '' : 's'})<br />
+          </Link>
+        ))}
       </div>
     </Layout>
   </div>
