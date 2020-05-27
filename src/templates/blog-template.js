@@ -52,6 +52,27 @@ const BlogPostTemplate = ({ data }) => {
         })}
       </p>
       <div dangerouslySetInnerHTML={{ __html: html }} />
+      <p
+        style={{
+          fontWeight: `bold`,
+          fontSize: `1rem`,
+          marginBottom: `2rem`,
+        }}
+      >
+        Tags:{' '}
+        {frontmatter.tags.map((tag) => {
+          console.log(frontmatter.tags);
+          return (
+            <Link
+              key={tag}
+              to={`/tags/${kebabCase(tag)}/`}
+              style={{ textDecoration: `none` }}
+            >
+              <span> {tag} </span>
+            </Link>
+          );
+        })}
+      </p>
     </Layout>
   );
 };
