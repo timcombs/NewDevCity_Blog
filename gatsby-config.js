@@ -34,6 +34,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackkingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID || `none`,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
