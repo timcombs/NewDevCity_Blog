@@ -39,7 +39,6 @@ const BlogPostTemplate = ({ data }) => {
       >
         Tags:{' '}
         {frontmatter.tags.map((tag) => {
-          console.log(frontmatter.tags);
           return (
             <Link
               key={tag}
@@ -61,7 +60,6 @@ const BlogPostTemplate = ({ data }) => {
       >
         Tags:{' '}
         {frontmatter.tags.map((tag) => {
-          console.log(frontmatter.tags);
           return (
             <Link
               key={tag}
