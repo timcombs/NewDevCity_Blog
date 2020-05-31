@@ -12,7 +12,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackkingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID || `none`,
+        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID || `none`,
       },
     },
     `gatsby-plugin-react-helmet`,
