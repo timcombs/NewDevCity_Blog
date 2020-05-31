@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: `newDevCity`,
@@ -5,6 +9,12 @@ module.exports = {
     author: `Tim Combs`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackkingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID || `none`,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -31,12 +41,6 @@ module.exports = {
       options: {
         name: `posts`,
         path: `${__dirname}/src/posts`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackkingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID || `none`,
       },
     },
     {
